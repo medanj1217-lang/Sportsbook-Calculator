@@ -1,0 +1,1027 @@
+  </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/formatter.js"></script>
+
+    <script src="js/settlement.js"></script>
+
+    <script src="js/calculator.js"></script>
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
+{
+    box-sizing: <border-box>
+        margin: 0;
+            padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #3b2b08 0%,
+            #111 35%,
+            #050505 100%
+        );
+color: #fff;
+
+    padding: 30px 15px;
+}
+/* CONTAINER */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* HEADER */
+
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    font-size: 34px;
+    color: #f5c542;
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: #aaa;
+}
+
+
+/* CARD */
+
+.card {
+    background: rgba(20, 20, 20, 0.95);
+
+    border: 1px solid rgba(245, 197, 66, 0.25);
+
+    border-radius: 18px;
+
+    padding: 22px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.5);
+}
+
+.card h2 {
+    color: #f5c542;
+    font-size: 19px;
+    margin-bottom: 18px;
+}
+
+
+/* FORM */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+
+    color: #ccc;
+
+    font-size: 13px;
+
+    margin-bottom: 7px;
+}
+
+input,
+select {
+    width: 100%;
+
+    border: 1px solid #333;
+
+    background: #171717;
+
+    color: #fff;
+
+    border-radius: 10px;
+
+    padding: 12px;
+
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #f5c542;
+}
+
+
+/* SECTION HEADER */
+
+.section-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+/* EVENT */
+
+#events {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.event {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr
+        1fr
+        1fr
+        45px;
+
+    gap: 10px;
+
+    align-items: end;
+
+    background: #111;
+
+    border: 1px solid #292929;
+
+    border-radius: 13px;
+
+    padding: 14px;
+}
+
+
+/* BUTTON */
+
+.btn {
+    border: none;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    border-radius: 10px;
+
+    padding: 12px 18px;
+}
+
+.btn-add {
+    background: #222;
+
+    color: #f5c542;
+
+    border: 1px solid #f5c542;
+}
+
+.btn-add:hover {
+    background: #f5c542;
+
+    color: #111;
+}
+
+.btn-calculate {
+    flex: 1;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5c542,
+            #d99d00
+        );
+
+    color: #111;
+}
+
+.btn-reset {
+    background: #333;
+
+    color: white;
+}
+
+.delete-btn {
+    height: 43px;
+
+    background: #7f1d1d;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+}
+
+
+/* ACTION */
+
+.action-area {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+
+/* RESULT */
+
+.result-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+.result-box {
+    background: #101010;
+
+    border: 1px solid #292929;
+
+    border-radius: 13px;
+
+    padding: 18px;
+
+    text-align: center;
+}
+
+.result-box span {
+    display: block;
+
+    color: #999;
+
+    margin-bottom: 9px;
+}
+.result-box strong {
+    color: #f5c542;
+
+    font-size: 21px;
+}
+/* STATUS */
+.win {
+    color: #22c55e !important;
+}
+.lose {
+    color: #ef4444 !important;
+}
+
+.mixed {
+    color: #38bdf8 !important;
+}
+
+.neutral {
+    color: #f5c542 !important;
+}
+
+
+/* TABLE */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 800px;
+}
+
+th {
+    color: #f5c542;
+
+    background: #161616;
+
+    text-align: left;
+}
+
+th,
+td {
+    padding: 12px;
+
+    border-bottom: 1px solid #292929;
+
+    font-size: 13px;
+}
+
+td {
+    color: #ddd;
+}
+
+
+/* INFO */
+
+.info {
+    background: #111;
+
+    border-left: 3px solid #f5c542;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    line-height: 1.8;
+
+    color: #bbb;
+}
+
+.info p {
+    margin-bottom: 5px;
+}
+
+.info b {
+    color: #f5c542;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+    .event {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .result-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 15px 10px;
+    }
+
+    .header h1 {
+        font-size: 25px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .event {
+        grid-template-columns:
+            1fr;
+    }
+
+    .result-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .action-area {
+        flex-direction: column;
+    }
+
+    .section-header {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+function formatRupiah(number) {
+
+    return new Intl.NumberFormat(
+        "id-ID",
+        {
+            style: "currency",
+            currency: "IDR",
+            maximumFractionDigits: 0
+        }
+    ).format(number);
+
+}
+
+
+function formatOdds(number) {
+
+    return Number(number).toFixed(4);
+
+}
+
+
+function escapeHTML(text) {
+
+    return String(text)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+function settlementFactor(odds, status) {
+
+    odds = Number(odds);
+
+    switch (status) {
+
+        case "WIN":
+            return odds;
+
+        case "LOSE":
+            return 0;
+
+        case "HW":
+            return (odds + 1) / 2;
+
+        case "HL":
+            return 0.5;
+
+        case "PUSH":
+            return 1;
+
+        default:
+            return 1;
+    }
+}
+
+
+function getSettlementClass(status) {
+
+    switch (status) {
+
+        case "WIN":
+            return "win";
+
+        case "LOSE":
+            return "lose";
+
+        case "HW":
+        case "HL":
+            return "mixed";
+
+        case "PUSH":
+            return "neutral";
+
+        default:
+            return "neutral";
+    }
+function calculate() {
+
+    const stake =
+        parseFloat(
+            document.getElementById("stake").value
+        ) || 0;
+
+
+    const events =
+        document.querySelectorAll(".event");
+
+
+    if (events.length === 0) {
+
+        alert("Tambahkan minimal satu event.");
+
+        return;
+    }
+
+
+    let totalOdds = 1;
+
+    let hasLose = false;
+
+    let hasHalf = false;
+
+
+    const resultTable =
+        document.getElementById("resultTable");
+
+
+    resultTable.innerHTML = "";
+
+
+    events.forEach((event, index) => {
+
+        const name =
+            event.querySelector(
+                ".event-name"
+            ).value
+            || `Event ${index + 1}`;
+
+
+        const market =
+            event.querySelector(
+                ".event-market"
+            ).value;
+
+
+        const odds =
+            parseFloat(
+                event.querySelector(
+                    ".event-odds"
+                ).value
+            ) || 1;
+
+
+        const status =
+            event.querySelector(
+                ".event-status"
+            ).value;
+
+
+        const handicap =
+            event.querySelector(
+                ".event-handicap"
+            ).value;
+
+
+        const factor =
+            settlementFactor(
+                odds,
+                status
+            );
+
+
+        totalOdds *= factor;
+
+
+        if (status === "LOSE") {
+
+            hasLose = true;
+
+        }
+
+
+        if (
+            status === "HW" ||
+            status === "HL"
+        ) {
+
+            hasHalf = true;
+
+        }
+
+
+        const row =
+            document.createElement("tr");
+
+
+        row.innerHTML = `
+
+            <td>
+                ${escapeHTML(name)}
+
+                <br>
+
+                <small>
+                    Handicap: ${handicap}
+                </small>
+            </td>
+
+            <td>
+                ${market}
+            </td>
+
+            <td>
+                ${odds.toFixed(2)}
+            </td>
+
+            <td class="${getSettlementClass(status)}">
+                ${status}
+            </td>
+
+            <td>
+                ${factor.toFixed(4)}
+            </td>
+
+            <td>
+                ${factor.toFixed(4)}
+            </td>
+
+        `;
+
+
+        resultTable.appendChild(row);
+
+    });
+
+
+    let statusText;
+
+
+    if (hasLose) {
+
+        statusText = "LOSE";
+
+    }
+    else if (hasHalf) {
+
+        statusText = "MIXED";
+
+    }
+    else {
+
+        statusText = "WIN";
+
+    }
+
+
+    const totalReturn =
+        stake * totalOdds;
+
+
+    const profitLoss =
+        totalReturn - stake;
+
+
+    document.getElementById(
+        "totalOdds"
+    ).innerText =
+        totalOdds.toFixed(4);
+
+
+    document.getElementById(
+        "totalReturn"
+    ).innerText =
+        formatRupiah(totalReturn);
+
+
+    document.getElementById(
+        "profitLoss"
+    ).innerText =
+        formatRupiah(profitLoss);
+
+
+    const statusElement =
+        document.getElementById(
+            "resultStatus"
+        );
+
+
+    statusElement.innerText =
+        statusText;
+
+
+    statusElement.className =
+        getSettlementClass(
+            statusText
+        );
+}
+let eventCounter = 0;
+
+
+/* =========================
+   TAMBAH EVENT
+========================= */
+
+function addEvent() {
+
+    eventCounter++;
+
+
+    const container =
+        document.getElementById(
+            "events"
+        );
+
+
+    const event =
+        document.createElement(
+            "div"
+        );
+
+
+    event.className = "event";
+
+
+    event.innerHTML = `
+
+        <div>
+
+            <label>
+                Nama Event
+            </label>
+
+            <input
+                type="text"
+                class="event-name"
+                placeholder="Team A vs Team B"
+            >
+
+        </div>
+
+
+        <div>
+
+            <label>
+                Market
+            </label>
+
+            <select class="event-market">
+
+                <option value="1X2">
+                    1X2
+                </option>
+
+                <option value="Asian Handicap">
+                    Asian Handicap
+                </option>
+
+                <option value="Over / Under">
+                    Over / Under
+                </option>
+
+                <option value="Both Teams To Score">
+                    BTTS
+                </option>
+
+                <option value="Double Chance">
+                    Double Chance
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div>
+
+            <label>
+                Odds
+            </label>
+
+            <input
+                type="number"
+                class="event-odds"
+                min="1"
+                step="0.01"
+                placeholder="1.80"
+            >
+
+        </div>
+
+
+        <div>
+
+            <label>
+                Settlement
+            </label>
+
+            <select class="event-status">
+
+                <option value="WIN">
+                    WIN
+                </option>
+
+                <option value="LOSE">
+                    LOSE
+                </option>
+
+                <option value="HW">
+                    HW
+                </option>
+
+                <option value="HL">
+                    HL
+                </option>
+
+                <option value="PUSH">
+                    PUSH
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div>
+
+            <label>
+                Handicap
+            </label>
+
+            <select class="event-handicap">
+
+                <option value="NONE">
+                    -
+                </option>
+
+                <option value="-1.5">
+                    -1.5
+                </option>
+
+                <option value="-1.25">
+                    -1.25
+                </option>
+
+                <option value="-1">
+                    -1
+                </option>
+
+                <option value="-0.75">
+                    -0.75
+                </option>
+
+                <option value="-0.5">
+                    -0.5
+                </option>
+
+                <option value="-0.25">
+                    -0.25
+                </option>
+
+                <option value="0">
+                    0
+                </option>
+
+                <option value="+0.25">
+                    +0.25
+                </option>
+
+                <option value="+0.5">
+                    +0.5
+                </option>
+
+                <option value="+0.75">
+                    +0.75
+                </option>
+
+                <option value="+1">
+                    +1
+                </option>
+
+                <option value="+1.25">
+                    +1.25
+                </option>
+
+                <option value="+1.5">
+                    +1.5
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            class="delete-btn"
+            onclick="removeEvent(this)"
+        >
+            ×
+        </button>
+
+    `;
+
+
+    container.appendChild(event);
+
+}
+
+
+/* =========================
+   HAPUS EVENT
+========================= */
+
+function removeEvent(button) {
+
+    button
+        .parentElement
+        .remove();
+
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+function resetCalculator() {
+
+    document.getElementById(
+        "events"
+    ).innerHTML = "";
+
+
+    document.getElementById(
+        "resultTable"
+    ).innerHTML = "";
+
+
+    document.getElementById(
+        "totalOdds"
+    ).innerText = "0.00";
+
+
+    document.getElementById(
+        "totalReturn"
+    ).innerText = "Rp 0";
+
+
+    document.getElementById(
+        "profitLoss"
+    ).innerText = "Rp 0";
+
+
+    document.getElementById(
+        "resultStatus"
+    ).innerText = "-";
+
+
+    document.getElementById(
+        "resultStatus"
+    ).className = "neutral";
+
+
+    eventCounter = 0;
+
+
+    addEvent();
+
+}
+
+
+/* =========================
+   BUTTON EVENT
+========================= */
+
+document
+    .getElementById("addEventBtn")
+    .addEventListener(
+        "click",
+        addEvent
+    );
+
+
+document
+    .getElementById("calculateBtn")
+    .addEventListener(
+        "click",
+        calculate
+    );
+
+
+document
+    .getElementById("resetBtn")
+    .addEventListener(
+        "click",
+        resetCalculator
+    );
+
+
+/* =========================
+   EVENT PERTAMA
+========================= */
+
+addEvent();
+📁 Sportsbook-Calculator
+│
+├── 📄 index.html
+│
+├── 📁 css
+│   └── 📄 style.css
+│
+├── 📁 js
+│   ├── 📄 app.js
+│   ├── 📄 calculator.js
+│   ├── 📄 settlement.js
+│   └── 📄 formatter.js
+│
+└── 📁 assets
+    │
+    ├── 📁 images
+    │
+    └── 📁 icons
+    <script src="js/formatter.js"></script>
+<script src="js/settlement.js"></script>
+<script src="js/calculator.js"></script>
+<script src="js/app.js"></script>
